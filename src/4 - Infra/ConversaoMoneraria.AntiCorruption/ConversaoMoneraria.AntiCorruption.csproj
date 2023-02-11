@@ -7,15 +7,15 @@
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-      <DebugType>none</DebugType>
+        <DebugType>none</DebugType>
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Newtonsoft.Json" Version="13.0.3-beta1" />
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.3-beta1"/>
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\3 - Dominio\ConversaoMonetaria.Dominio\ConversaoMonetaria.Dominio.csproj" />
+        <ProjectReference Include="..\..\3 - Dominio\ConversaoMonetaria.Dominio\ConversaoMonetaria.Dominio.csproj"/>
     </ItemGroup>
 
 </Project>

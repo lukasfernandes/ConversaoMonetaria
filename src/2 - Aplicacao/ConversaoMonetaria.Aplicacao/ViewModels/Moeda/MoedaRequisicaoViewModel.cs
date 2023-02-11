@@ -40,16 +40,15 @@ public class MoedaRequisicaoViewModel : IViewModel
                 .WithErrorCode(Mensagens.Obrigatorio().CodigoMensagem.ToString());
 
 
-        RuleFor(p => p.Nome)
-            .NotEmpty()
-            .WithMessage(Mensagens.Obrigatorio().Mensagem.FormatEx(ConstantesString.PropertyNameValidated))
-            .WithErrorCode(Mensagens.Obrigatorio().CodigoMensagem.ToString());
+            RuleFor(p => p.Nome)
+                .NotEmpty()
+                .WithMessage(Mensagens.Obrigatorio().Mensagem.FormatEx(ConstantesString.PropertyNameValidated))
+                .WithErrorCode(Mensagens.Obrigatorio().CodigoMensagem.ToString());
 
-        RuleFor(p => p.Cotacao)
-            .NotEmpty()
-            .WithMessage(Mensagens.Obrigatorio().Mensagem.FormatEx(ConstantesString.PropertyNameValidated))
-            .WithErrorCode(Mensagens.Obrigatorio().CodigoMensagem.ToString());
-
+            RuleFor(p => p.Cotacao)
+                .NotEmpty()
+                .WithMessage(Mensagens.Obrigatorio().Mensagem.FormatEx(ConstantesString.PropertyNameValidated))
+                .WithErrorCode(Mensagens.Obrigatorio().CodigoMensagem.ToString());
         }
     }
 }

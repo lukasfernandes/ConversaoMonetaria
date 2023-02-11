@@ -16,12 +16,15 @@ public class MoedaValidador : AbstractValidator<Moeda>
             .WithMessage(Mensagens.Mensagens.Obrigatorio().Mensagem.FormatEx(ConstantesString.PropertyNameValidated))
             .WithErrorCode(Mensagens.Mensagens.Obrigatorio().CodigoMensagem.ToString())
             .MaximumLength(4)
-            .WithMessage(Mensagens.Mensagens.TamanhoMaximo().Mensagem.FormatEx(ConstantesString.PropertyNameValidated, 4))
+            .WithMessage(Mensagens.Mensagens.TamanhoMaximo().Mensagem
+                .FormatEx(ConstantesString.PropertyNameValidated, 4))
             .WithErrorCode(Mensagens.Mensagens.TamanhoMaximo().CodigoMensagem.ToString())
             .MinimumLength(3)
-            .WithMessage(Mensagens.Mensagens.TamanhoMinimo().Mensagem.FormatEx(ConstantesString.PropertyNameValidated, 3))
+            .WithMessage(Mensagens.Mensagens.TamanhoMinimo().Mensagem
+                .FormatEx(ConstantesString.PropertyNameValidated, 3))
             .WithErrorCode(Mensagens.Mensagens.TamanhoMinimo().CodigoMensagem.ToString())
-            .Must(EhCaixaAlta).WithMessage(Mensagens.Mensagens.CaixaAlta().Mensagem.FormatEx(ConstantesString.PropertyNameValidated))
+            .Must(EhCaixaAlta).WithMessage(Mensagens.Mensagens.CaixaAlta().Mensagem
+                .FormatEx(ConstantesString.PropertyNameValidated))
             .WithErrorCode(Mensagens.Mensagens.CaixaAlta().CodigoMensagem.ToString());
 
         RuleFor(p => p.Nome)
@@ -29,10 +32,12 @@ public class MoedaValidador : AbstractValidator<Moeda>
             .WithMessage(Mensagens.Mensagens.Obrigatorio().Mensagem.FormatEx(ConstantesString.PropertyNameValidated))
             .WithErrorCode(Mensagens.Mensagens.Obrigatorio().CodigoMensagem.ToString())
             .MaximumLength(150)
-            .WithMessage(Mensagens.Mensagens.TamanhoMaximo().Mensagem.FormatEx(ConstantesString.PropertyNameValidated, 150))
+            .WithMessage(Mensagens.Mensagens.TamanhoMaximo().Mensagem
+                .FormatEx(ConstantesString.PropertyNameValidated, 150))
             .WithErrorCode(Mensagens.Mensagens.TamanhoMaximo().CodigoMensagem.ToString())
             .MinimumLength(5)
-            .WithMessage(Mensagens.Mensagens.TamanhoMinimo().Mensagem.FormatEx(ConstantesString.PropertyNameValidated, 5))
+            .WithMessage(Mensagens.Mensagens.TamanhoMinimo().Mensagem
+                .FormatEx(ConstantesString.PropertyNameValidated, 5))
             .WithErrorCode(Mensagens.Mensagens.TamanhoMinimo().CodigoMensagem.ToString());
 
         RuleFor(p => p.Cotacao)

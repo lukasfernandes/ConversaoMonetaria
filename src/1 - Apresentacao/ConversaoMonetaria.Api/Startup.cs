@@ -5,7 +5,6 @@ using System.Reflection;
 using System.Text;
 using System.Text.Json;
 using ConversaoMonetaria.Api.App_Data;
-using Microsoft.OpenApi.Models;
 using ConversaoMonetaria.Aplicacao.Automapper;
 using ConversaoMonetaria.Aplicacao.JwtSecurity;
 using ConversaoMonetaria.CrossCutting.IoC;
@@ -23,6 +22,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using Serilog;
 using Serilog.Core;
 using Serilog.Events;
@@ -189,7 +189,7 @@ public class Startup
             if (context.HttpContext.Response.StatusCode == 401)
             {
                 var resposta = JsonSerializer.Serialize(new
-                    {codigoMensagem = 303, mensagem = new NaoAutorizadoException().Message});
+                    { codigoMensagem = 303, mensagem = new NaoAutorizadoException().Message });
                 context.HttpContext.Response.ContentType = "application/json";
                 await context.HttpContext.Response.WriteAsync(resposta);
             }

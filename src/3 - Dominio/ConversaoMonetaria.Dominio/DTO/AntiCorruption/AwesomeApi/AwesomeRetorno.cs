@@ -56,7 +56,7 @@ internal static class Converter
         Converters =
         {
             CodeinConverter.Singleton,
-            new IsoDateTimeConverter {DateTimeStyles = DateTimeStyles.AssumeUniversal}
+            new IsoDateTimeConverter { DateTimeStyles = DateTimeStyles.AssumeUniversal }
         }
     };
 }
@@ -93,7 +93,7 @@ internal class CodeinConverter : JsonConverter
             return;
         }
 
-        var value = (Codein) untypedValue;
+        var value = (Codein)untypedValue;
         switch (value)
         {
             case Codein.Brl:
@@ -134,7 +134,7 @@ internal class ParseStringConverter : JsonConverter
             return;
         }
 
-        var value = (long) untypedValue;
+        var value = (long)untypedValue;
         serializer.Serialize(writer, value.ToString());
     }
 }

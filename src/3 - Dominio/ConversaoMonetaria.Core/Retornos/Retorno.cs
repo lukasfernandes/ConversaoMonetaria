@@ -6,13 +6,13 @@
 /// </summary>
 /// <typeparam name="TFalha"></typeparam>
 /// <typeparam name="TSucesso"></typeparam>
-///
 /// TODO: Alterar no futuro para poder retornar uma lista de criticas.
 public struct Retorno<TFalha, TSucesso>
 {
     public TFalha Failure { get; }
     public TSucesso Result { get; }
     private bool _ehFalha { get; }
+
     public bool EhFalha()
     {
         return _ehFalha;

@@ -1,5 +1,4 @@
 ﻿using Bogus;
-using Moq.AutoMock;
 
 namespace ConversaoMonetaria.Dominio.Tests.Moeda;
 
@@ -11,7 +10,7 @@ public class MoedaTestsFixture
     {
         var Moeda = new Faker<Entidades.Moedas.Moeda>(Locale)
             .CustomInstantiator(f =>
-                new Entidades.Moedas.Moeda{Nome = f.Person.FirstName, Codigo = "ABC", Cotacao = 2});
+                new Entidades.Moedas.Moeda { Nome = f.Person.FirstName, Codigo = "ABC", Cotacao = 2 });
 
         return Moeda;
     }
@@ -20,7 +19,7 @@ public class MoedaTestsFixture
     {
         var Moeda = new Faker<Entidades.Moedas.Moeda>(Locale)
             .CustomInstantiator(f =>
-                new Entidades.Moedas.Moeda{Nome = "", Codigo = "A", Cotacao = -1});
+                new Entidades.Moedas.Moeda { Nome = "", Codigo = "A", Cotacao = -1 });
 
         return Moeda;
     }

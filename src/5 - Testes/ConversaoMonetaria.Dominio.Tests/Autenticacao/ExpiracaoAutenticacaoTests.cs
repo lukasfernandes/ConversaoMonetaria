@@ -15,7 +15,7 @@ public class ExpiracaoAutenticacaoTests
     {
         // Arrange // Action
         var expiracaoAutenticacao = new ExpiracaoAutenticacao
-            {TempoExpiracaoAutenticacaoMinutos = 10};
+            { TempoExpiracaoAutenticacaoMinutos = 10 };
 
         // Assert
         expiracaoAutenticacao.TempoExpiracaoAutenticacaoMinutos.Should().Be(10);

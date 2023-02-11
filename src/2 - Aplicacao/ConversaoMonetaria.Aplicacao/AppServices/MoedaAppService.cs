@@ -11,6 +11,7 @@ using ConversaoMonetaria.Dominio.Core.Utils;
 using ConversaoMonetaria.Dominio.Entidades.Moedas;
 using ConversaoMonetaria.Dominio.Exceptions.Base;
 using ConversaoMonetaria.Dominio.Interfaces.Repositorio;
+using ConversaoMonetaria.Dominio.Mensagens;
 
 namespace ConversaoMonetaria.Aplicacao.AppServices;
 
@@ -61,8 +62,8 @@ public class MoedaAppService : IMoedaAppService
                 resultadovalidacao.Errors.FirstOrDefault()?.ErrorMessage);
 
         if (_moedaRepositorio.ExisteMoedaComCodigo(moeda.Codigo))
-            return new FormatoInvalidoException(Dominio.Mensagens.Mensagens.NaoDevExistir().CodigoMensagem,
-                Dominio.Mensagens.Mensagens.NaoDevExistir().Mensagem.FormatEx(moeda.CodigoAlias));
+            return new FormatoInvalidoException(Mensagens.NaoDevExistir().CodigoMensagem,
+                Mensagens.NaoDevExistir().Mensagem.FormatEx(moeda.CodigoAlias));
 
         await _moedaRepositorio.Salvar(moeda);
 
@@ -91,8 +92,8 @@ public class MoedaAppService : IMoedaAppService
                 resultadoValidacao.Errors.FirstOrDefault()?.ErrorMessage);
 
         if (_moedaRepositorio.ExisteMoedaComCodigo(moeda.Codigo))
-            return new FormatoInvalidoException(Dominio.Mensagens.Mensagens.NaoDevExistir().CodigoMensagem,
-                Dominio.Mensagens.Mensagens.NaoDevExistir().Mensagem.FormatEx(ConstantesString.PropertyNameValidated));
+            return new FormatoInvalidoException(Mensagens.NaoDevExistir().CodigoMensagem,
+                Mensagens.NaoDevExistir().Mensagem.FormatEx(ConstantesString.PropertyNameValidated));
 
         await _moedaRepositorio.Atualizar(moeda);
 

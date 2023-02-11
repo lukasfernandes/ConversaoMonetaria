@@ -9,7 +9,7 @@ using Microsoft.Extensions.Logging;
 namespace ConversaoMonetaria.Api.Worker;
 
 /// <summary>
-///  Worker responsavel por atualizar cotações com AwesomeApi e gravar no banco.
+///     Worker responsavel por atualizar cotações com AwesomeApi e gravar no banco.
 /// </summary>
 public class CotacoesWorker : BackgroundService
 {
@@ -17,7 +17,7 @@ public class CotacoesWorker : BackgroundService
     private readonly ILogger<CotacoesWorker> _logger;
 
     /// <summary>
-    /// Construtor
+    ///     Construtor
     /// </summary>
     /// <param name="logger">Objeto para logar eventos no serilog</param>
     /// <param name="awesomeApiAppService"> Service que consome a API de busca de cotações</param>
@@ -28,7 +28,7 @@ public class CotacoesWorker : BackgroundService
     }
 
     /// <summary>
-    ///  Executa quando o worker é iniciado
+    ///     Executa quando o worker é iniciado
     /// </summary>
     /// <param name="cancellationToken"> solitacao de cancelamento</param>
     /// <returns></returns>
@@ -39,7 +39,7 @@ public class CotacoesWorker : BackgroundService
     }
 
     /// <summary>
-    /// Executa quando o worker é parado
+    ///     Executa quando o worker é parado
     /// </summary>
     /// <param name="cancellationToken">solitacao de cancelamento</param>
     /// <returns></returns>
@@ -50,7 +50,7 @@ public class CotacoesWorker : BackgroundService
     }
 
     /// <summary>
-    ///  Acionado sempre que o worker estiver em execução
+    ///     Acionado sempre que o worker estiver em execução
     /// </summary>
     /// <param name="stoppingToken"></param>
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)

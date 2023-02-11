@@ -1,15 +1,10 @@
 ﻿using AutoMapper;
 using ConversaoMonetaria.Aplicacao.AppServices;
-using ConversaoMonetaria.Aplicacao.Interfaces;
 using ConversaoMonetaria.Aplicacao.ViewModels.Autenticacao;
-using ConversaoMonetaria.Dominio.Core.Exceptions;
-using ConversaoMonetaria.Dominio.Core.Http;
-using ConversaoMonetaria.Dominio.Core.Retornos;
 using ConversaoMonetaria.Dominio.Exceptions.Base;
 using ConversaoMonetaria.Dominio.Interfaces.Repositorio;
 using FluentAssertions;
 using Moq;
-using Moq.AutoMock;
 using Xunit;
 
 namespace ConversaoMonetaria.Aplicacao.Tests.Services.Autenticacao;
@@ -18,9 +13,9 @@ public class AutenticacaoAppServiceTests
 {
     private const string CategoriaTrait = "Categoria aplicacao";
     private const string NomeCategoriaTrait = "Autenticacao App Service Testes";
+    private readonly AutenticacaoAppService _autenticacaoAppService;
 
     private readonly AutenticacaoAppServiceTestsFixture _autenticacaoAppServiceTestsFixture;
-    private readonly AutenticacaoAppService _autenticacaoAppService;
 
     public AutenticacaoAppServiceTests()
     {
@@ -33,7 +28,8 @@ public class AutenticacaoAppServiceTests
     public void AutenticacaoAppService_Autenticar_DeveAutenticar()
     {
         // Arrange
-        var autenticacaoRequisicaoViewModel = _autenticacaoAppServiceTestsFixture.GerarAutenticacaoRequisicaoViewModelValida();
+        var autenticacaoRequisicaoViewModel =
+            _autenticacaoAppServiceTestsFixture.GerarAutenticacaoRequisicaoViewModelValida();
         var autenticacao = _autenticacaoAppServiceTestsFixture.GerarAutenticacaoValida();
 
         _autenticacaoAppServiceTestsFixture.Mocker.GetMock<IMapper>()
@@ -67,7 +63,7 @@ public class AutenticacaoAppServiceTests
 
         _autenticacaoAppServiceTestsFixture.Mocker.GetMock<IAutenticacaoRepositorio>()
             .Setup(a => a.Autenticar(It.IsAny<Dominio.Entidades.Autenticacao.Autenticacao>()))
-            .Returns( new NaoAutorizadoException());
+            .Returns(new NaoAutorizadoException());
 
         // Action
         var resultado = _autenticacaoAppService.Autenticar(autenticacaoRequisicaoViewModel);
@@ -76,5 +72,4 @@ public class AutenticacaoAppServiceTests
         resultado.EhFalha().Should().BeTrue();
         resultado.Result.Should().Be(null);
     }
-
 }

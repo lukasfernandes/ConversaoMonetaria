@@ -86,6 +86,4 @@ public class MoedasControllerTests
         // Assert
         resultado.Should().BeOfType<CreatedResult>();
     }
-
-
 }

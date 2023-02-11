@@ -39,6 +39,6 @@ public class ConversaoMonetariaService : IConversaoMonetariaService
 
         // Valore recido é dividido pela cotação da moeda origem convertendo assim para Real a moeda base,
         // após é dividida pela cotação a moeda destino baseada em Real.
-        return valor * (decimal) moedaDe / (decimal) moedaPara;
+        return valor * (decimal)moedaDe / (decimal)moedaPara;
     }
 }

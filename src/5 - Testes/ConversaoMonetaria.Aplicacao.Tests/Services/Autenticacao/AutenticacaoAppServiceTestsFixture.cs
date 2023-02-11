@@ -10,8 +10,8 @@ namespace ConversaoMonetaria.Aplicacao.Tests.Services.Autenticacao;
 public class AutenticacaoAppServiceTestsFixture
 {
     private const string Locale = "pt_BR";
-    public AutoMocker Mocker;
     public AutenticacaoAppService AutenticacaoAppService;
+    public AutoMocker Mocker;
 
     public Dominio.Entidades.Autenticacao.Autenticacao GerarAutenticacaoValida()
     {
@@ -32,6 +32,7 @@ public class AutenticacaoAppServiceTestsFixture
 
         return autenticacao;
     }
+
     public AutenticacaoViewModel GerarAutenticacaoRequisicaoViewModelValida()
     {
         return new Faker<AutenticacaoViewModel>(Locale)
@@ -44,7 +45,7 @@ public class AutenticacaoAppServiceTestsFixture
 
     public AutenticacaoViewModel GerarAutenticacaoRequisicaoViewModelInvalida()
     {
-        return new AutenticacaoViewModel {Usuario = null, Senha = null};
+        return new AutenticacaoViewModel { Usuario = null, Senha = null };
     }
 
     public AutenticacaoRespostaViewModel GerarAutenticacaoRespostaViewModelValido()

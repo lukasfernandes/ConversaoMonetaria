@@ -1,5 +1,4 @@
 ﻿using ConversaoMonetaria.Api.Controllers;
-using ConversaoMonetaria.Dominio.Core.Exceptions;
 using FluentAssertions;
 using Microsoft.AspNetCore.Mvc;
 using Moq.AutoMock;
@@ -21,7 +20,7 @@ public class ConversaoMonetariaControllerTests
         var controller = mocker.CreateInstance<ConversaoMonetariaController>();
 
         // Action
-        var resultado =  controller.Converter("USD", "BRL", 1);
+        var resultado = controller.Converter("USD", "BRL", 1);
 
         // Assert
         resultado.Should().BeOfType<ObjectResult>();

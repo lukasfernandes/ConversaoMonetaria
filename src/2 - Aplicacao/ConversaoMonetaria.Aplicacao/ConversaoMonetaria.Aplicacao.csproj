@@ -6,19 +6,19 @@
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-      <DebugType>none</DebugType>
+        <DebugType>none</DebugType>
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="AutoMapper" Version="12.0.1" />
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="7.0.2" />
-        <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.26.1" />
+        <PackageReference Include="AutoMapper" Version="12.0.1"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="7.0.2"/>
+        <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.26.1"/>
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\3 - Dominio\ConversaoMonetaria.Dominio\ConversaoMonetaria.Dominio.csproj" />
-        <ProjectReference Include="..\..\4 - Infra\ConversaoMoneraria.AntiCorruption\ConversaoMoneraria.AntiCorruption.csproj" />
-        <ProjectReference Include="..\..\4 - Infra\ConversaoMonetaria.Api.Data\ConversaoMonetaria.Data.csproj" />
+        <ProjectReference Include="..\..\3 - Dominio\ConversaoMonetaria.Dominio\ConversaoMonetaria.Dominio.csproj"/>
+        <ProjectReference Include="..\..\4 - Infra\ConversaoMoneraria.AntiCorruption\ConversaoMoneraria.AntiCorruption.csproj"/>
+        <ProjectReference Include="..\..\4 - Infra\ConversaoMonetaria.Api.Data\ConversaoMonetaria.Data.csproj"/>
     </ItemGroup>
 
 </Project>
