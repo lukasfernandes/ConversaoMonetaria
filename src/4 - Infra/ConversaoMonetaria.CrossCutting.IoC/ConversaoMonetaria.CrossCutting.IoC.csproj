@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net7.0</TargetFramework>
+        <TargetFramework>net8.0</TargetFramework>
         <LangVersion>latest</LangVersion>
     </PropertyGroup>
 
@@ -10,12 +10,12 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
+        <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0"/>
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\2 - Aplicacao\ConversaoMonetaria.Aplicacao\ConversaoMonetaria.Aplicacao.csproj" />
-        <ProjectReference Include="..\ConversaoMoneraria.AntiCorruption\ConversaoMoneraria.AntiCorruption.csproj" />
+        <ProjectReference Include="..\..\2 - Aplicacao\ConversaoMonetaria.Aplicacao\ConversaoMonetaria.Aplicacao.csproj"/>
+        <ProjectReference Include="..\ConversaoMoneraria.AntiCorruption\ConversaoMoneraria.AntiCorruption.csproj"/>
     </ItemGroup>
 
 </Project>
