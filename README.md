@@ -1,4 +1,4 @@
-# <img src="https://avatars1.githubusercontent.com/u/7063040?v=4&s=200.jpg" alt="Hurb" width="24" /> Desafio Bravo
+# Desafio 
 
 # Conversão Monetária
     Foi desenvolvido uma aplicação para conversão monetária de moedas reais e fictícias, de acordo com os requisitos do desafio.
